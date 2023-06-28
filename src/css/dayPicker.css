@@ -1,0 +1,14 @@
+.day-picker {
+  width: 200px;
+  background-color: aqua;
+  border: 10px solid rgb(40, 130, 158);
+  padding: 10px;
+}
+.button {
+  padding: 10px;
+}
+.button.selected {
+  color: white;
+  background-color: brown;
+  border-radius: 5px;
+}
