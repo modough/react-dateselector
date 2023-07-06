@@ -5,27 +5,41 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import CurrentDate from './CurrentDate';
 import DaysInMonth from './DaysInMonth';
+import { useState } from 'react';
+import { currentMonth, currentYear } from '../utils/dateFormat';
+import Weeks from './Weeks';
 const DayPicker = () => {
-
+    const [month, setMonth] = useState(currentMonth)
+    const [year, setYear] = useState(currentYear)
+    const handleNextMonth = () => {
+        if (month === 11) {
+            setMonth(0)
+            setYear(year + 1)
+            console.log(month)
+        } else {
+            setMonth(month + 1)
+            console.log(month)
+        }
+    }
+    const handlePrevMonth = () => {
+        if (month === 0) {
+            setYear(year - 1)
+            setMonth(11)
+        } else {
+            setMonth(month - 1)
+        }
+    }
     return (
         <div className='daypicker-wrapper'>
             <header>
-                <CurrentDate />
+                <CurrentDate month={month} year={year} />
                 <div className='icons'>
-                    <FontAwesomeIcon icon={faChevronLeft} />
-                    <FontAwesomeIcon icon={faChevronRight} />
+                    <FontAwesomeIcon onClick={handlePrevMonth} icon={faChevronLeft} />
+                    <FontAwesomeIcon onClick={handleNextMonth} icon={faChevronRight} />
                 </div>
             </header>
             <div className='calendar'>
-                <ul className='weeks'>
-                    <li>Sun</li>
-                    <li>Mon</li>
-                    <li>Tue</li>
-                    <li>Wed</li>
-                    <li>Thu</li>
-                    <li>Fri</li>
-                    <li>Sat</li>
-                </ul>
+                <Weeks />
                 <DaysInMonth />
             </div>
         </div>

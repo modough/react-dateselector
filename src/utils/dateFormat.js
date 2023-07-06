@@ -1,3 +1,3 @@
 const date = new Date();
-export const year = date.getFullYear();
-export const month = date.getMonth();
+export const currentYear = date.getFullYear();
+export const currentMonth = date.getMonth();

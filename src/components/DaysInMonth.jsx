@@ -1,14 +1,16 @@
-import { month, year } from "../utils/dateFormat";
+import { currentMonth, currentYear } from "../utils/dateFormat";
 function DaysInMonth() {
-    let lastDateOfMonth = new Date(year, month + 1, 0).getDate();
-
-    let daysLiTag = '';
-    for (let i = 1; i <= lastDateOfMonth; i++) {
-        daysLiTag += `<li>${i}</li>`;
-    }
+    let lastDateOfMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
 
     return (
-        <ul className='days' dangerouslySetInnerHTML={{ __html: daysLiTag }}>
+        <ul className='days'>
+            {
+                Array
+                    .from({ length: lastDateOfMonth }, (_, i) => i + 1)
+                    .map((day) =>
+                        <li key={day}>{day}</li>
+                    )
+            }
         </ul>
     )
 }

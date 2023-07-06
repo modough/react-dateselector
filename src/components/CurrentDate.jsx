@@ -1,10 +1,11 @@
 import '../css/currentDate.css';
 import { monthsInLetter } from '../data/monthInLetter';
-import { month, year } from '../utils/dateFormat';
-function CurrentDate() {
+function CurrentDate({ month, year }) {
 
     return (
-        <div className='current-date'>{`${monthsInLetter[month]} ${year}`}</div>
+        <div className='current-date'>
+            {`${monthsInLetter[month]} ${year}`}
+        </div>
     )
 }
 
