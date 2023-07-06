@@ -1,4 +1,5 @@
 import { daysInLetter } from "../data/daysInLetter"
+import '../css/weeks.css'
 
 
 function Weeks() {

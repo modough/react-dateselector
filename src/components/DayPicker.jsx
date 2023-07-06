@@ -31,13 +31,13 @@ const DayPicker = () => {
     }
     return (
         <div className='daypicker-wrapper'>
-            <header>
+            <div className='header'>
                 <CurrentDate month={month} year={year} />
                 <div className='icons'>
                     <FontAwesomeIcon onClick={handlePrevMonth} icon={faChevronLeft} />
                     <FontAwesomeIcon onClick={handleNextMonth} icon={faChevronRight} />
                 </div>
-            </header>
+            </div>
             <div className='calendar'>
                 <Weeks />
                 <DaysInMonth />
