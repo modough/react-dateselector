@@ -40,7 +40,7 @@ const DayPicker = () => {
             </div>
             <div className='calendar'>
                 <Weeks />
-                <DaysInMonth />
+                <DaysInMonth month={month} year={year} />
             </div>
         </div>
     );
