@@ -5,7 +5,7 @@ import { monthsInLetter } from '../data/monthInLetter';
 function CurrentDate({ month, year }) {
     return (
         <div className='current-date'>
-            {` ${monthsInLetter[month]} ${year}`}
+            {`${monthsInLetter[month]} ${year}`}
         </div>
     )
 }

@@ -8,7 +8,6 @@ function DaysInMonth({ month, year }) {
     const thisMonthLastDate = new Date(year, month + 1, 0).getDate();
     const thisMonthLastDateIndex = new Date(year, month, thisMonthLastDate).getDay();
     const lastMonthLastDate = new Date(year, month, 0).getDate();
-    const day = new Date(year, month + 1, 0).toLocaleDateString('en-us', { weekday: 'long', year: 'numeric', month: 'numeric', day: 'numeric' })
 
 
     //creating array with previous month last days

@@ -6,10 +6,12 @@ import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons
 import CurrentDate from './CurrentDate';
 import DaysInMonth from './DaysInMonth';
 import { useState } from 'react';
-import { currentMonth, currentYear } from '../utils/dateFormat';
+import { currentMonth, currentYear, date } from '../utils/dateFormat';
 import Weeks from './Weeks';
 
 const DayPicker = () => {
+    const options = { weekday: 'long', year: 'numeric', month: 'numeric', day: 'numeric' };
+    const dateToLocalDateString = date.toLocaleDateString('en-us', options).split('/').join(' ')
     const [month, setMonth] = useState(currentMonth)
     const [year, setYear] = useState(currentYear)
 
@@ -37,6 +39,9 @@ const DayPicker = () => {
                     <FontAwesomeIcon onClick={displayPrevMonth} icon={faChevronLeft} />
                     <CurrentDate month={month} year={year} />
                     <FontAwesomeIcon onClick={displayNextMonth} icon={faChevronRight} />
+                </div>
+                <div className='today-date'>
+                    {dateToLocalDateString}
                 </div>
             </div>
             <div className='calendar'>
