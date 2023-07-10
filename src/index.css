@@ -15,12 +15,13 @@ li {
   list-style: none;
 }
 body {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
   box-sizing: border-box;
-  background-color: rgb(81, 91, 175);
+  background-color: rgb(119, 125, 177);
 }
 #root {
   margin: 0;

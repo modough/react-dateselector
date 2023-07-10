@@ -8,20 +8,20 @@ import DaysInMonth from './DaysInMonth';
 import { useState } from 'react';
 import { currentMonth, currentYear } from '../utils/dateFormat';
 import Weeks from './Weeks';
+
 const DayPicker = () => {
     const [month, setMonth] = useState(currentMonth)
     const [year, setYear] = useState(currentYear)
-    const handleNextMonth = () => {
+
+    const displayNextMonth = () => {
         if (month === 11) {
             setMonth(0)
             setYear(year + 1)
-            console.log(month)
         } else {
             setMonth(month + 1)
-            console.log(month)
         }
     }
-    const handlePrevMonth = () => {
+    const displayPrevMonth = () => {
         if (month === 0) {
             setYear(year - 1)
             setMonth(11)
@@ -29,13 +29,14 @@ const DayPicker = () => {
             setMonth(month - 1)
         }
     }
+
     return (
         <div className='daypicker-wrapper'>
             <div className='header'>
-                <CurrentDate month={month} year={year} />
                 <div className='icons'>
-                    <FontAwesomeIcon onClick={handlePrevMonth} icon={faChevronLeft} />
-                    <FontAwesomeIcon onClick={handleNextMonth} icon={faChevronRight} />
+                    <FontAwesomeIcon onClick={displayPrevMonth} icon={faChevronLeft} />
+                    <CurrentDate month={month} year={year} />
+                    <FontAwesomeIcon onClick={displayNextMonth} icon={faChevronRight} />
                 </div>
             </div>
             <div className='calendar'>

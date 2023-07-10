@@ -1,11 +1,11 @@
 import '../css/currentDate.css';
 import PropTypes from 'prop-types'
 import { monthsInLetter } from '../data/monthInLetter';
-function CurrentDate({ month, year }) {
 
+function CurrentDate({ month, year }) {
     return (
         <div className='current-date'>
-            {`${monthsInLetter[month]} ${year}`}
+            {` ${monthsInLetter[month]} ${year}`}
         </div>
     )
 }

@@ -1,4 +1,3 @@
-
 import DayPicker from './components/DayPicker'
 
 function App() {
