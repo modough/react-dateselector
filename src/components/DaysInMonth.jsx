@@ -10,7 +10,7 @@ function DaysInMonth({ month, year }) {
     const lastMonthLastDate = new Date(year, month, 0).getDate();
     const handleClickDate = (e) => {
         const clickedDate = `${e.target.innerHTML}/${month + 1}/${year}`
-        e.target.className = 'clicked'
+        e.target.classList.add('clicked')
         return clickedDate
     }
 
