@@ -33,3 +33,6 @@
 .days li.inactive {
   color: #aaa;
 }
+.days li.clicked::before {
+  background-color: rgb(201, 114, 209);
+}

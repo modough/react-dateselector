@@ -8,7 +8,11 @@ function DaysInMonth({ month, year }) {
     const thisMonthLastDate = new Date(year, month + 1, 0).getDate();
     const thisMonthLastDateIndex = new Date(year, month, thisMonthLastDate).getDay();
     const lastMonthLastDate = new Date(year, month, 0).getDate();
-
+    const handleClickDate = (e) => {
+        const clickedDate = `${e.target.innerHTML}/${month + 1}/${year}`
+        e.target.className = 'clicked'
+        return clickedDate
+    }
 
     //creating array with previous month last days
     for (let i = thisMonthFirstDateIndex; i > 0; i--) {
@@ -32,6 +36,9 @@ function DaysInMonth({ month, year }) {
             <li
                 key={thisMonthLastDate + i}
                 className={`${today}`}
+                onClick={(e) =>
+                    console.log(handleClickDate(e))
+                }
             >
                 {i}
             </li>
@@ -49,6 +56,7 @@ function DaysInMonth({ month, year }) {
             </li>
         )
     }
+
 
     return (
 

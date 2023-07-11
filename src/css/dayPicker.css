@@ -9,7 +9,7 @@
   justify-content: center;
   flex-direction: column;
   color: white;
-  padding: 40px;
+  padding: 20px 40px;
   background-color: #1e0af3;
   border-radius: 10px 10px 0 0;
 }
@@ -36,7 +36,7 @@
   font-size: 20px;
 }
 .calendar {
-  padding: 20px 40px 40px;
+  padding: 10px 20px 40px;
 }
 .calendar ul {
   padding: 0;
