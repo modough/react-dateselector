@@ -2,8 +2,11 @@
   margin-bottom: 20px;
 }
 .days li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
-  margin-top: 30px;
+  height: 70px;
   z-index: 1;
 }
 .days li:hover {

@@ -1,24 +1,23 @@
 import '../css/daysInMonth.css';
 import PropTypes from 'prop-types'
 import { date, currentMonth, currentYear } from '../utils/dateFormat';
+import { useState } from 'react';
 
 function DaysInMonth({ month, year }) {
     let arrayDate = [];
+    const [clickedDate, setClickedDate] = useState(null);
     const thisMonthFirstDateIndex = new Date(year, month, 1).getDay();
     const thisMonthLastDate = new Date(year, month + 1, 0).getDate();
     const thisMonthLastDateIndex = new Date(year, month, thisMonthLastDate).getDay();
     const lastMonthLastDate = new Date(year, month, 0).getDate();
-    const handleClickDate = (e) => {
-        const clickedDate = `${e.target.innerHTML}/${month + 1}/${year}`
-        e.target.classList.add('clicked')
-        return clickedDate
-    }
-
+    const handleClick = (i) => {
+        setClickedDate(i);
+    };
     //creating array with previous month last days
     for (let i = thisMonthFirstDateIndex; i > 0; i--) {
         arrayDate.push(
             <li
-                key={1 - lastMonthLastDate - i}
+                key={`prev-${i}`}
                 className='inactive'
             >
                 {lastMonthLastDate - i + 1}
@@ -32,12 +31,13 @@ function DaysInMonth({ month, year }) {
             month === currentMonth &&
             year === currentYear ?
             'active' : ''
+        const isClicked = clickedDate === i ? 'clicked' : '';
         arrayDate.push(
             <li
-                key={thisMonthLastDate + i}
-                className={`${today}`}
-                onClick={(e) =>
-                    console.log(handleClickDate(e))
+                key={i}
+                className={`${today} ${isClicked}`}
+                onClick={() =>
+                    handleClick(i)
                 }
             >
                 {i}
@@ -49,7 +49,7 @@ function DaysInMonth({ month, year }) {
     for (let i = thisMonthLastDateIndex; i < 6; i++) {
         arrayDate.push(
             <li
-                key={i - thisMonthLastDateIndex + 1}
+                key={`next-${i}`}
                 className='inactive'
             >
                 {i - thisMonthLastDateIndex + 1}
@@ -57,13 +57,10 @@ function DaysInMonth({ month, year }) {
         )
     }
 
-
     return (
-
         <ul className='days'>
             {arrayDate}
         </ul>
-
     )
 }
 DaysInMonth.propTypes = {
