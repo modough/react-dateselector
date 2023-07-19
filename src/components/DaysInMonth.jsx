@@ -1,7 +1,7 @@
 import '../css/daysInMonth.css';
 import PropTypes from 'prop-types'
 import { date, currentMonth, currentYear } from '../utils/dateFormat';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function DaysInMonth({ month, year }) {
     let arrayDate = [];
@@ -10,11 +10,17 @@ function DaysInMonth({ month, year }) {
     const thisMonthLastDate = new Date(year, month + 1, 0).getDate();
     const thisMonthLastDateIndex = new Date(year, month, thisMonthLastDate).getDay();
     const lastMonthLastDate = new Date(year, month, 0).getDate();
-    const [clickedDate, setClickedDate] = useState(null);
+    const [clickedDate, setClickedDate] = useState({ day: null, month: month + 1, year });
+
     const handleClick = (i) => {
-        setClickedDate(i);
+        setClickedDate({ day: i, month, year });
         localStorage.setItem('day', `${i}/${month + 1}/${year}`)
     };
+
+    useEffect(() => {
+        console.log(clickedDate)
+    }, [clickedDate])
+
     //creating array with previous month last days
     for (let i = thisMonthFirstDateIndex; i > 0; i--) {
         arrayDate.push(
@@ -29,24 +35,28 @@ function DaysInMonth({ month, year }) {
 
     //creating array with this month days
     for (let i = 1; i <= thisMonthLastDate; i++) {
-        const today = i === date.getDate() &&
+        const todayClassName = i === date.getDate() &&
             month === currentMonth &&
             year === currentYear ?
             'active' : ''
-        const isClicked = clickedDate === i ? 'clicked' : '';
+        const clickedClassName = i === clickedDate.day &&
+            month === clickedDate.month &&
+            year === clickedDate.year ?
+            'clicked' : '';
         arrayDate.push(
             <li
                 key={i}
-                className={`${today} ${isClicked}`}
-                onClick={() =>
+                className={`${todayClassName} ${clickedClassName}`}
+                onClick={() => {
+                    console.log(i)
                     handleClick(i)
+                }
                 }
             >
                 {i}
-            </li>
+            </li >
         )
     }
-
     //creating array with next month first days
     for (let i = thisMonthLastDateIndex; i < 6; i++) {
         arrayDate.push(

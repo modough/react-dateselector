@@ -14,12 +14,15 @@ const DayPicker = () => {
     const dateToLocalDateString = date.toLocaleDateString('en-us', options).split(',').join(' ')
     const [month, setMonth] = useState(currentMonth)
     const [year, setYear] = useState(currentYear)
-    const [isToday, setIsToday] = useState()
+    const [today, setToday] = useState()
 
     const handleToday = () => {
-        setIsToday(date)
+        setMonth(currentMonth)
+        setYear(currentYear)
+        setToday(date)
     }
     const displayNextMonth = () => {
+        setToday(null)
         if (month === 11) {
             setMonth(0)
             setYear(year + 1)
@@ -28,6 +31,7 @@ const DayPicker = () => {
         }
     }
     const displayPrevMonth = () => {
+        setToday(null)
         if (month === 0) {
             setYear(year - 1)
             setMonth(11)
@@ -36,9 +40,11 @@ const DayPicker = () => {
         }
     }
     const displayNextYear = () => {
+        setToday(null)
         setYear(year + 1)
     }
     const displayPrevYear = () => {
+        setToday(null)
         setYear(year - 1)
     }
 
@@ -53,8 +59,8 @@ const DayPicker = () => {
                     />
                     <FontAwesomeIcon onClick={displayPrevMonth} icon={faChevronLeft} />
                     <CurrentDate
-                        month={isToday ? currentMonth : month}
-                        year={isToday ? currentYear : year}
+                        month={today ? currentMonth : month}
+                        year={today ? currentYear : year}
                     />
                     <FontAwesomeIcon onClick={displayNextMonth} icon={faChevronRight} />
                     <FontAwesomeIcon
@@ -70,8 +76,8 @@ const DayPicker = () => {
             <div className='calendar'>
                 <Weeks />
                 <DaysInMonth
-                    month={isToday ? currentMonth : month}
-                    year={isToday ? currentYear : year}
+                    month={today ? currentMonth : month}
+                    year={today ? currentYear : year}
                 />
             </div>
         </div>
