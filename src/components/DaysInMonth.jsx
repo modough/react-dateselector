@@ -5,13 +5,15 @@ import { useState } from 'react';
 
 function DaysInMonth({ month, year }) {
     let arrayDate = [];
-    const [clickedDate, setClickedDate] = useState(null);
+
     const thisMonthFirstDateIndex = new Date(year, month, 1).getDay();
     const thisMonthLastDate = new Date(year, month + 1, 0).getDate();
     const thisMonthLastDateIndex = new Date(year, month, thisMonthLastDate).getDay();
     const lastMonthLastDate = new Date(year, month, 0).getDate();
+    const [clickedDate, setClickedDate] = useState(null);
     const handleClick = (i) => {
         setClickedDate(i);
+        localStorage.setItem('day', `${i}/${month + 1}/${year}`)
     };
     //creating array with previous month last days
     for (let i = thisMonthFirstDateIndex; i > 0; i--) {
