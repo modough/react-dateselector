@@ -10,10 +10,10 @@ function DaysInMonth({ month, year }) {
     const thisMonthLastDate = new Date(year, month + 1, 0).getDate();
     const thisMonthLastDateIndex = new Date(year, month, thisMonthLastDate).getDay();
     const lastMonthLastDate = new Date(year, month, 0).getDate();
-    const [clickedDate, setClickedDate] = useState({ day: null, month: month + 1, year });
+    const [clickedDate, setClickedDate] = useState({ day: null, month, year });
 
     const handleClick = (i) => {
-        setClickedDate({ day: i, month, year });
+        setClickedDate({ day: i, month: month + 1, year });
         localStorage.setItem('day', `${i}/${month + 1}/${year}`)
     };
 
@@ -40,21 +40,20 @@ function DaysInMonth({ month, year }) {
             year === currentYear ?
             'active' : ''
         const clickedClassName = i === clickedDate.day &&
-            month === clickedDate.month &&
+            month === clickedDate.month - 1 &&
             year === clickedDate.year ?
-            'clicked' : '';
+            'clicked' : ''
         arrayDate.push(
             <li
                 key={i}
                 className={`${todayClassName} ${clickedClassName}`}
                 onClick={() => {
-                    console.log(i)
                     handleClick(i)
                 }
                 }
             >
                 {i}
-            </li >
+            </li>
         )
     }
     //creating array with next month first days
