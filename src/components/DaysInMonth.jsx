@@ -5,13 +5,11 @@ import { useEffect, useState } from 'react';
 
 function DaysInMonth({ month, year }) {
     let arrayDate = [];
-
     const thisMonthFirstDateIndex = new Date(year, month, 1).getDay();
     const thisMonthLastDate = new Date(year, month + 1, 0).getDate();
     const thisMonthLastDateIndex = new Date(year, month, thisMonthLastDate).getDay();
     const lastMonthLastDate = new Date(year, month, 0).getDate();
     const [clickedDate, setClickedDate] = useState({ day: null, month, year });
-
     const handleClick = (i) => {
         setClickedDate({ day: i, month: month + 1, year });
         localStorage.setItem('day', `${i}/${month + 1}/${year}`)
@@ -77,5 +75,6 @@ function DaysInMonth({ month, year }) {
 DaysInMonth.propTypes = {
     month: PropTypes.number,
     year: PropTypes.number,
+    setIsClicked: PropTypes.func,
 }
 export default DaysInMonth
