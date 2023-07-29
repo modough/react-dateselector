@@ -75,6 +75,6 @@ function DaysInMonth({ setIsClicked, month, year }) {
 DaysInMonth.propTypes = {
     month: PropTypes.number,
     year: PropTypes.number,
-    setIsClicked: PropTypes.func,
+    setIsClicked: PropTypes.object,
 }
 export default DaysInMonth

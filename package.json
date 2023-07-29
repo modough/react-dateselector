@@ -29,7 +29,7 @@
     "vite": "^4.3.9"
   },
   "description": "A date selector build with react",
-  "main": "main.jsx",
+  "main": "App.jsx",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/modough/react-dateselector.git"
