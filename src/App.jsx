@@ -1,9 +1,12 @@
 import DayPicker from './components/DayPicker'
+import PropTypes from 'prop-types'
 
-function App() {
+function App({ setIsClicked }) {
   return (
-    <DayPicker />
+    <DayPicker setIsClicked={setIsClicked} />
   )
 }
-
+App.propTypes = {
+  setIsClicked: PropTypes.func,
+}
 export default App

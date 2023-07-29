@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { date, currentMonth, currentYear } from '../utils/dateFormat';
 import { useEffect, useState } from 'react';
 
-function DaysInMonth({ month, year }) {
+function DaysInMonth({ setIsClicked, month, year }) {
     let arrayDate = [];
     const thisMonthFirstDateIndex = new Date(year, month, 1).getDay();
     const thisMonthLastDate = new Date(year, month + 1, 0).getDate();
