@@ -17,7 +17,10 @@ function DaysInMonth({ setIsClicked, month, year }) {
 
     useEffect(() => {
         console.log(clickedDate)
-    }, [clickedDate])
+        if (setIsClicked) {
+            clickedDate
+        }
+    }, [clickedDate, setIsClicked]);
 
     //creating array with previous month last days
     for (let i = thisMonthFirstDateIndex; i > 0; i--) {
