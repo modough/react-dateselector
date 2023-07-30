@@ -1,7 +1,7 @@
 {
   "name": "date-selector-react",
   "private": false,
-  "version": "1.0.3",
+  "version": "1.0.4",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -29,7 +29,7 @@
     "vite": "^4.3.9"
   },
   "description": "A date selector build with react",
-  "main": "DayPicker.jsx",
+  "main": "App.jsx",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/modough/react-dateselector.git"
