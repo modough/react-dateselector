@@ -1,4 +1,4 @@
-import DayPicker from './components/DayPicker'
+import DayPicker from './src/components/DayPicker'
 import PropTypes from 'prop-types'
 
 function App({ setIsClicked }) {
