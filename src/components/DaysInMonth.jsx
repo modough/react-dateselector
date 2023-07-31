@@ -1,26 +1,18 @@
 import '../css/daysInMonth.css';
 import PropTypes from 'prop-types'
 import { date, currentMonth, currentYear } from '../utils/dateFormat';
-import { useEffect, useState } from 'react';
 
-function DaysInMonth({ setIsClicked, month, year }) {
+function DaysInMonth({ clickedDate = date, setClickedDate, month, year }) {
     let arrayDate = [];
     const thisMonthFirstDateIndex = new Date(year, month, 1).getDay();
     const thisMonthLastDate = new Date(year, month + 1, 0).getDate();
     const thisMonthLastDateIndex = new Date(year, month, thisMonthLastDate).getDay();
     const lastMonthLastDate = new Date(year, month, 0).getDate();
-    const [clickedDate, setClickedDate] = useState({ day: null, month, year });
+
     const handleClick = (i) => {
         setClickedDate({ day: i, month: month + 1, year });
         localStorage.setItem('day', `${i}/${month + 1}/${year}`)
     };
-
-    useEffect(() => {
-        console.log(clickedDate)
-        if (setIsClicked) {
-            clickedDate
-        }
-    }, [clickedDate, setIsClicked]);
 
     //creating array with previous month last days
     for (let i = thisMonthFirstDateIndex; i > 0; i--) {
@@ -78,6 +70,7 @@ function DaysInMonth({ setIsClicked, month, year }) {
 DaysInMonth.propTypes = {
     month: PropTypes.number,
     year: PropTypes.number,
-    setIsClicked: PropTypes.object,
+    clickedDate: PropTypes.object,
+    setClickedDate: PropTypes.func,
 }
 export default DaysInMonth

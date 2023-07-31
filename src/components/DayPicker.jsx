@@ -8,10 +8,11 @@ import DaysInMonth from './DaysInMonth';
 import { useState } from 'react';
 import { currentMonth, currentYear, date } from '../utils/dateFormat';
 import Weeks from './Weeks';
+import PropTypes from 'prop-types'
 
-const DayPicker = (setIsClicked) => {
+const DayPicker = ({ clickedDate, setClickedDate, locale }) => {
     const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-    const dateToLocalDateString = date.toLocaleDateString('en-us', options).split(',').join(' ')
+    const dateToLocalDateString = date.toLocaleDateString(locale, options).split(',').join(' ')
     const [month, setMonth] = useState(currentMonth)
     const [year, setYear] = useState(currentYear)
     const [today, setToday] = useState()
@@ -76,7 +77,8 @@ const DayPicker = (setIsClicked) => {
             <div className='calendar'>
                 <Weeks />
                 <DaysInMonth
-                    setIsClicked={setIsClicked}
+                    clickedDate={clickedDate}
+                    setClickedDate={setClickedDate}
                     month={today ? currentMonth : month}
                     year={today ? currentYear : year}
                 />
@@ -84,4 +86,9 @@ const DayPicker = (setIsClicked) => {
         </div>
     );
 };
+DayPicker.propTypes = {
+    clickedDate: PropTypes.object,
+    setClickedDate: PropTypes.func,
+    locale: PropTypes.string
+}
 export default DayPicker;
