@@ -3,9 +3,13 @@ import DayPicker from './src/components/DayPicker'
 import PropTypes from 'prop-types'
 
 function App({ locale = 'en-us' }) {
-  const [clickedDate, setClickedDate] = useState()
+  const [clickedDate, setClickedDate] = useState({})
   return (
-    <DayPicker locale={locale} clickedDate={clickedDate} setClickedDate={setClickedDate} />
+    <DayPicker
+      locale={locale}
+      clickedDate={clickedDate}
+      setClickedDate={setClickedDate}
+    />
   )
 }
 App.propTypes = {

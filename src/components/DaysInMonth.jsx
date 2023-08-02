@@ -2,17 +2,12 @@ import '../css/daysInMonth.css';
 import PropTypes from 'prop-types'
 import { date, currentMonth, currentYear } from '../utils/dateFormat';
 
-function DaysInMonth({ clickedDate = date, setClickedDate, month, year }) {
+function DaysInMonth({ setClickedDate, clickedDate, month, year }) {
     let arrayDate = [];
     const thisMonthFirstDateIndex = new Date(year, month, 1).getDay();
     const thisMonthLastDate = new Date(year, month + 1, 0).getDate();
     const thisMonthLastDateIndex = new Date(year, month, thisMonthLastDate).getDay();
     const lastMonthLastDate = new Date(year, month, 0).getDate();
-
-    const handleClick = (i) => {
-        setClickedDate({ day: i, month: month + 1, year });
-        localStorage.setItem('day', `${i}/${month + 1}/${year}`)
-    };
 
     //creating array with previous month last days
     for (let i = thisMonthFirstDateIndex; i > 0; i--) {
@@ -28,12 +23,14 @@ function DaysInMonth({ clickedDate = date, setClickedDate, month, year }) {
 
     //creating array with this month days
     for (let i = 1; i <= thisMonthLastDate; i++) {
+        const monthFormat = month + 1 <= 9 ? `0${month}` : `${month}`
+        const dayFormat = i <= 9 ? `0${i}` : `${i}`
         const todayClassName = i === date.getDate() &&
             month === currentMonth &&
             year === currentYear ?
             'active' : ''
-        const clickedClassName = i === clickedDate.day &&
-            month === clickedDate.month - 1 &&
+        const clickedClassName = dayFormat === clickedDate.day &&
+            monthFormat === clickedDate.month &&
             year === clickedDate.year ?
             'clicked' : ''
         arrayDate.push(
@@ -41,7 +38,7 @@ function DaysInMonth({ clickedDate = date, setClickedDate, month, year }) {
                 key={i}
                 className={`${todayClassName} ${clickedClassName}`}
                 onClick={() => {
-                    handleClick(i)
+                    setClickedDate({ day: dayFormat, month: monthFormat, year: year });
                 }
                 }
             >

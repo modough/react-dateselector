@@ -87,7 +87,7 @@ const DayPicker = ({ clickedDate, setClickedDate, locale }) => {
     );
 };
 DayPicker.propTypes = {
-    clickedDate: PropTypes.object,
+    clickedDate: PropTypes.string,
     setClickedDate: PropTypes.func,
     locale: PropTypes.string
 }
