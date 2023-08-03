@@ -6,14 +6,12 @@
   border-radius: 10px;
 }
 .daypicker-wrapper .header {
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
-  gap: 11px;
+  flex-direction: column-reverse;
   color: white;
-  padding: 20px;
+  padding: 10px;
   background-color: #1e0af3;
   border-radius: 10px 10px 0 0;
   box-shadow: 0px -7px 5px 0px rgba(0, 0, 0, 0.75) inset;
@@ -21,7 +19,6 @@
   -moz-box-shadow: 0px -7px 5px 0px rgba(0, 0, 0, 0.75) inset;
 }
 .daypicker-wrapper .header .icons {
-  width: 255px;
   display: flex;
   align-items: center;
   justify-content: space-between;
