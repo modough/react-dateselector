@@ -1,6 +1,6 @@
 .daypicker-wrapper {
-  max-width: 550px;
-  max-height: 850px;
+  max-width: 300px;
+  max-height: 400px;
   margin: 50px;
   background-color: rgb(248, 248, 247);
   border-radius: 10px;
@@ -11,9 +11,8 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  gap: 35px;
+  gap: 11px;
   color: white;
-  height: 120px;
   padding: 20px;
   background-color: #1e0af3;
   border-radius: 10px 10px 0 0;
@@ -22,14 +21,14 @@
   -moz-box-shadow: 0px -7px 5px 0px rgba(0, 0, 0, 0.75) inset;
 }
 .daypicker-wrapper .header .icons {
-  width: 100%;
+  width: 255px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
 .header .icons svg {
-  font-size: 30px;
+  font-size: 10px;
   padding: 10px 15px;
   border-radius: 10px;
   cursor: pointer;
@@ -40,13 +39,10 @@
   background-color: rgb(201, 204, 204);
 }
 .daypicker-wrapper .header .today-date button {
-  position: absolute;
-  left: 20%;
-  bottom: 20px;
-  font-size: 17px;
+  font-size: 10px;
   font-weight: 700;
   cursor: pointer;
-  padding: 5px 80px;
+  padding: 5px 40px;
   border-radius: 5px;
   border: none;
   box-shadow: 6px 23px 29px -4px rgba(0, 0, 0, 0.47);
@@ -54,20 +50,24 @@
   -moz-box-shadow: 6px 23px 29px -4px rgba(0, 0, 0, 0.47);
 }
 .daypicker-wrapper .header .today-date button:hover {
-  font-size: 17.5px;
+  font-size: 10.5px;
   transition: 0.5s ease-in-out;
 }
 .header .icons svg.year-icon {
-  font-size: 25px;
+  font-size: 10px;
 }
 .calendar {
   padding: 10px 20px;
 }
 .calendar ul {
+  font-size: 10px;
   padding: 0;
   display: flex;
   flex-wrap: wrap;
   text-align: center;
+}
+.calendar ul.days {
+  margin: 0;
 }
 .calendar ul li {
   position: relative;

@@ -23,7 +23,7 @@ function DaysInMonth({ setClickedDate, clickedDate, month, year }) {
 
     //creating array with this month days
     for (let i = 1; i <= thisMonthLastDate; i++) {
-        const monthFormat = month + 1 <= 9 ? `0${month}` : `${month}`
+        const monthFormat = month + 1 <= 9 ? `0${month + 1}` : `${month + 1}`
         const dayFormat = i <= 9 ? `0${i}` : `${i}`
         const todayClassName = i === date.getDate() &&
             month === currentMonth &&
