@@ -1,4 +1,5 @@
 .daypicker-wrapper {
+  width: 250px;
   position: absolute;
   background-color: rgb(248, 248, 247);
   border-radius: 10px;
@@ -35,12 +36,11 @@
   color: black;
   background-color: rgb(201, 204, 204);
 }
-.daypicker-wrapper .header .today-date {
-  height: 70px;
-}
 .daypicker-wrapper .header .today-date button {
   margin: 0;
-  font-size: 7px;
+  padding: 5px 15px;
+  background-color: #fff;
+  font-size: 10px;
   font-weight: 700;
   cursor: pointer;
   border-radius: 5px;
@@ -50,7 +50,7 @@
   -moz-box-shadow: 6px 23px 29px -4px rgba(0, 0, 0, 0.47);
 }
 .daypicker-wrapper .header .today-date button:hover {
-  font-size: 7.5px;
+  font-size: 10.5px;
   transition: 0.5s ease-in-out;
 }
 .header .icons svg.year-icon {
