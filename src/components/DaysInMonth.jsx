@@ -37,7 +37,8 @@ function DaysInMonth({ setClickedDate, clickedDate, month, year }) {
             <li
                 key={i}
                 className={`${todayClassName} ${clickedClassName}`}
-                onClick={() => {
+                onClick={(e) => {
+                    e.preventDefault();
                     setClickedDate({ day: dayFormat, month: monthFormat, year: year });
                 }
                 }

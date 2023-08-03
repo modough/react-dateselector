@@ -70,7 +70,8 @@ const DayPicker = ({ clickedDate, setClickedDate, locale }) => {
                         icon={faFastForward}
                     />
                 </div>
-                <div className='today-date' onClick={handleToday}>
+                <div className='today-date'
+                    onClick={handleToday}>
                     <button>{dateToLocalDateString}</button>
                 </div>
             </div>
