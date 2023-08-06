@@ -71,7 +71,10 @@ const DayPicker = ({ clickedDate, setClickedDate, locale }) => {
                     />
                 </div>
                 <div className='today-date'
-                    onClick={handleToday}>
+                    onClick={(e) => {
+                        e.preventDefault();
+                        handleToday()
+                    }}>
                     <button>{dateToLocalDateString}</button>
                 </div>
             </div>
