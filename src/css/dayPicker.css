@@ -11,7 +11,7 @@
   justify-content: space-between;
   flex-direction: column;
   color: white;
-  padding: 10px;
+  padding: 15px;
   background-color: #1e0af3;
   border-radius: 10px 10px 0 0;
   box-shadow: 0px -7px 5px 0px rgba(0, 0, 0, 0.75) inset;
@@ -20,42 +20,29 @@
 }
 .daypicker-wrapper .header .icons {
   position: relative;
-  width: 230px;
+  width: 200px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.header .icons button {
-  background-color: #1e0af3;
-  border: none;
-}
-.header .icons button img {
-  top: 3px;
-  position: absolute;
+.header .icons img {
   cursor: pointer;
   border-radius: 5px;
   padding: 5px;
   width: 12px;
 }
-.header .icons .leftArrow-year img {
-  left: 10px;
-}
-.header .icons .leftArrow-month img {
-  left: 40px;
-  rotate: 180deg;
-}
-.header .icons .rightArrow-month img {
-  left: 170px;
-}
-.header .icons .rightArrow-year img {
-  left: 200px;
+
+.header .icons .leftArrow-month {
   rotate: 180deg;
 }
 
-.header .icons button img:hover {
+.header .icons .rightArrow-year {
+  rotate: 180deg;
+}
+
+.header .icons img:hover {
   background-color: rgb(201, 204, 204);
-  width: 13px;
 }
 .daypicker-wrapper .header .today-date button {
   margin: 0;
@@ -75,9 +62,7 @@
   font-size: 10.5px;
   transition: 0.5s ease-in-out;
 }
-.header .icons svg.year-icon {
-  font-size: 10px;
-}
+
 .calendar {
   padding: 10px 20px;
 }

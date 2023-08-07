@@ -54,35 +54,39 @@ const DayPicker = ({ clickedDate, setClickedDate, locale }) => {
         <div className='daypicker-wrapper'>
             <div className='header'>
                 <div className='icons'>
-                    <button className='leftArrow-year' onClick={displayPrevYear}>
-                        <img
-                            src={doubleArrow}
-                            alt='arrow for previous year'
-                        />
-                    </button>
-                    <button className='leftArrow-month' onClick={displayPrevMonth}>
-                        <img
-                            src={arrow}
-                            alt='arrow for previous month'
-                        />
-                    </button>
+
+                    <img
+                        className='leftArrow-year' onClick={displayPrevYear}
+                        src={doubleArrow}
+                        alt='arrow for previous year'
+                    />
+
+
+                    <img
+                        className='leftArrow-month' onClick={displayPrevMonth}
+                        src={arrow}
+                        alt='arrow for previous month'
+                    />
+
 
                     <CurrentDate
                         month={today ? currentMonth : month}
                         year={today ? currentYear : year}
                     />
-                    <button className='rightArrow-month' onClick={displayNextMonth}>
-                        <img
-                            src={arrow}
-                            alt='arrow for next month'
-                        />
-                    </button>
-                    <button className='rightArrow-year' onClick={displayNextYear}>
-                        <img
-                            src={doubleArrow}
-                            alt='arrow for next month'
-                        />
-                    </button>
+
+                    <img
+                        className='rightArrow-month' onClick={displayNextMonth}
+                        src={arrow}
+                        alt='arrow for next month'
+                    />
+
+
+                    <img
+                        className='rightArrow-year' onClick={displayNextYear}
+                        src={doubleArrow}
+                        alt='arrow for next month'
+                    />
+
                 </div>
                 <div className='today-date'
                     onClick={(e) => {
