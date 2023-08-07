@@ -2,6 +2,7 @@ import '../css/daysInMonth.css';
 import PropTypes from 'prop-types'
 import { date, currentMonth, currentYear } from '../utils/dateFormat';
 
+
 function DaysInMonth({ setClickedDate, clickedDate, month, year }) {
     let arrayDate = [];
     const thisMonthFirstDateIndex = new Date(year, month, 1).getDay();
