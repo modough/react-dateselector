@@ -89,7 +89,7 @@ const DayPicker = ({ clickedDate, setClickedDate, locale }) => {
                 </div>
             </div>
             <div className='calendar'>
-                <Weeks />
+                <Weeks locale={locale} />
                 <DaysInMonth
                     clickedDate={clickedDate}
                     setClickedDate={setClickedDate}
