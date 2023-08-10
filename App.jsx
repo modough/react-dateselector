@@ -1,9 +1,7 @@
-import { useState } from 'react'
 import DayPicker from './src/components/DayPicker'
 import PropTypes from 'prop-types'
 
-function App({ locale = 'en-us' }) {
-  const [clickedDate, setClickedDate] = useState({})
+function App({ locale = 'en-US', clickedDate, setClickedDate }) {
   return (
     <DayPicker
       locale={locale}
@@ -13,7 +11,7 @@ function App({ locale = 'en-us' }) {
   )
 }
 App.propTypes = {
-  clickedDate: PropTypes.string,
+  clickedDate: PropTypes.object,
   setClickedDate: PropTypes.func,
   locale: PropTypes.string
 }

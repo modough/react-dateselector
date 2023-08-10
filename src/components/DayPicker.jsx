@@ -54,39 +54,31 @@ const DayPicker = ({ clickedDate, setClickedDate, locale }) => {
         <div className='daypicker-wrapper'>
             <div className='header'>
                 <div className='icons'>
-
                     <img
                         className='leftArrow-year' onClick={displayPrevYear}
                         src={doubleArrow}
                         alt='arrow for previous year'
                     />
-
-
                     <img
                         className='leftArrow-month' onClick={displayPrevMonth}
                         src={arrow}
                         alt='arrow for previous month'
                     />
-
-
                     <CurrentDate
+                        locale={locale}
                         month={today ? currentMonth : month}
                         year={today ? currentYear : year}
                     />
-
                     <img
                         className='rightArrow-month' onClick={displayNextMonth}
                         src={arrow}
                         alt='arrow for next month'
                     />
-
-
                     <img
                         className='rightArrow-year' onClick={displayNextYear}
                         src={doubleArrow}
                         alt='arrow for next month'
                     />
-
                 </div>
                 <div className='today-date'
                     onClick={(e) => {
