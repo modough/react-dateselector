@@ -25,7 +25,7 @@ The package can be install via **_npm_**
 ## Configuration
 
 The most basic use of the DatePicker can be described with:
-< DatePicker setIsClicked={setIsClicked} />
+< DatePicker locale='en-US' clickedDate={clickedDate} setIsClicked={setIsClicked} />
 
 | Prop name | Desciption                            | default value |
 | --------- | ------------------------------------- | ------------- |
