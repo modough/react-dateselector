@@ -27,6 +27,7 @@ The package can be install via **_npm_**
 The most basic use of the DatePicker can be described with:
 < DatePicker locale='en-US' clickedDate={clickedDate} setIsClicked={setIsClicked} />
 
-| Prop name | Desciption                            | default value |
-| --------- | ------------------------------------- | ------------- |
-| locale    | `'Allow the user to change timezone'` | `'en-us'`     |
+| Prop name | Desciption                                                 | default value |
+| --------- | ---------------------------------------------------------- | ------------- |
+| locale    | `'Allow the user to change timezone'`                      | `'en-us'`     |
+| color     | `'Allow the user to change color on background and texts'` | `'red'`       |
