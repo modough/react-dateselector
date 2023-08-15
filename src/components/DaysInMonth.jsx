@@ -34,6 +34,7 @@ function DaysInMonth({ setClickedDate, clickedDate, month, year }) {
             monthFormat === clickedDate.month &&
             year === clickedDate.year ?
             'clicked' : ''
+
         arrayDate.push(
             <li
                 key={i}

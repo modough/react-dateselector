@@ -3,18 +3,19 @@ import PropTypes from 'prop-types'
 import '../css/weeks.css'
 
 
-function Weeks({ locale }) {
+function Weeks({ locale, color }) {
     const lang = locale.split('-')[0]
 
     return (
-        <ul className='weeks'>
+        <ul className='weeks' >
             {daysInLetter[lang].map((day) => {
-                return <li key={day}>{day}</li>
+                return <li key={day} style={{ color: color }}>{day}</li>
             })}
         </ul>
     )
 }
 Weeks.propTypes = {
-    locale: PropTypes.string
+    locale: PropTypes.string,
+    color: PropTypes.string,
 }
 export default Weeks
