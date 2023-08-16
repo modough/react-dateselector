@@ -9,7 +9,7 @@ function Weeks({ locale, color }) {
     return (
         <ul className='weeks' >
             {daysInLetter[lang].map((day) => {
-                return <li key={day} style={{ color: color }}>{day}</li>
+                return <li key={day} style={{ color }}>{day}</li>
             })}
         </ul>
     )

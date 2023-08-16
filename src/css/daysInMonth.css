@@ -18,8 +18,20 @@
   transform: translate(-50%, -50%);
   border-radius: 10px;
 }
-.days li.active::before {
+.days li.active-blue::before {
   background-color: blue;
+}
+.days li.active-red::before {
+  background-color: red;
+}
+.days li.active-orange::before {
+  background-color: orange;
+}
+.days li.active-gray::before {
+  background-color: gray;
+}
+.days li.active-green::before {
+  background-color: green;
 }
 .days li.active {
   color: #fff;

@@ -11,7 +11,7 @@ import arrow from '../assets/arrow-34.svg';
 import doubleArrow from '../assets/left-double-arrow.svg';
 
 
-const DayPicker = ({ clickedDate, setClickedDate, locale, color }) => {
+const DayPicker = ({ clickedDate, setClickedDate, locale, color, todayBackground }) => {
     const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
     const dateToLocalDateString = date.toLocaleDateString(locale, options).split(',').join(' ')
     const [month, setMonth] = useState(currentMonth)
@@ -96,6 +96,7 @@ const DayPicker = ({ clickedDate, setClickedDate, locale, color }) => {
                     month={today ? currentMonth : month}
                     year={today ? currentYear : year}
                     color={color}
+                    todayBackground={todayBackground}
                 />
             </div>
         </div>
@@ -106,5 +107,6 @@ DayPicker.propTypes = {
     setClickedDate: PropTypes.func,
     locale: PropTypes.string,
     color: PropTypes.string,
+    todayBackground: PropTypes.string,
 }
 export default DayPicker;

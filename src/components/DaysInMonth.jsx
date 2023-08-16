@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { date, currentMonth, currentYear } from '../utils/dateFormat';
 
 
-function DaysInMonth({ setClickedDate, clickedDate, month, year }) {
+function DaysInMonth({ setClickedDate, clickedDate, month, year, todayBackground }) {
     let arrayDate = [];
     const thisMonthFirstDateIndex = new Date(year, month, 1).getDay();
     const thisMonthLastDate = new Date(year, month + 1, 0).getDate();
@@ -29,7 +29,7 @@ function DaysInMonth({ setClickedDate, clickedDate, month, year }) {
         const todayClassName = i === date.getDate() &&
             month === currentMonth &&
             year === currentYear ?
-            'active' : ''
+            `active-${todayBackground}` : ''
         const clickedClassName = dayFormat === clickedDate.day &&
             monthFormat === clickedDate.month &&
             year === clickedDate.year ?
@@ -71,6 +71,7 @@ DaysInMonth.propTypes = {
     month: PropTypes.number,
     year: PropTypes.number,
     clickedDate: PropTypes.object,
+    todayBackground: PropTypes.string,
     setClickedDate: PropTypes.func,
 }
 export default DaysInMonth
