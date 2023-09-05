@@ -2,7 +2,22 @@ import { daysInLetter } from "../data/daysInLetter"
 import PropTypes from 'prop-types'
 import '../css/weeks.css'
 
-
+/**
+ * Weeks component for displaying the days of the week.
+ *
+ * @component
+ * @param {Object} props - The component props.
+ * @param {string} props.locale - The locale in the format "language-country".
+ * @param {string} props.color - The color for the day names.
+ * @returns {JSX.Element} The rendered Weeks component.
+ *
+ * @example
+ * // Example usage of Weeks component:
+ * <Weeks
+ *   locale="en-US"
+ *   color="#3498db"
+ * />
+ */
 function Weeks({ locale, color }) {
     const lang = locale.split('-')[0]
 

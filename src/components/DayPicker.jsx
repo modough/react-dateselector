@@ -10,7 +10,28 @@ import PropTypes from 'prop-types'
 import arrow from '../assets/arrow-34.svg';
 import doubleArrow from '../assets/left-double-arrow.svg';
 
-
+/**
+ * DayPicker component for displaying and navigating through calendar days.
+ *
+ * @component
+ * @param {Object} props - The component props.
+ * @param {Date} props.clickedDate - The currently clicked date.
+ * @param {function} props.setClickedDate - A function to update the clicked date.
+ * @param {string} props.locale - The locale in the format "language-country".
+ * @param {string} props.color - The background color for the header.
+ * @param {string} props.todayBackground - The background color for today's date.
+ * @returns {JSX.Element} The rendered DayPicker component.
+ *
+ * @example
+ * // Example usage of DayPicker component:
+ * <DayPicker
+ *   clickedDate={selectedDate}
+ *   setClickedDate={handleDateClick}
+ *   locale="en-US"
+ *   color="#3498db"
+ *   todayBackground="#f39c12"
+ * />
+ */
 const DayPicker = ({ clickedDate, setClickedDate, locale, color, todayBackground }) => {
     const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
     const dateToLocalDateString = date.toLocaleDateString(locale, options).split(',').join(' ')

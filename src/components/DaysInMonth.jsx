@@ -2,7 +2,28 @@ import '../css/daysInMonth.css';
 import PropTypes from 'prop-types'
 import { date, currentMonth, currentYear } from '../utils/dateFormat';
 
-
+/**
+ * DaysInMonth component for displaying the days of a specific month.
+ *
+ * @component
+ * @param {Object} props - The component props.
+ * @param {function} props.setClickedDate - A function to update the clicked date.
+ * @param {Object} props.clickedDate - The date that has been clicked.
+ * @param {number} props.month - The month (0-11) to display.
+ * @param {number} props.year - The year to display.
+ * @param {string} props.todayBackground - The background color for today's date.
+ * @returns {JSX.Element} The rendered DaysInMonth component.
+ *
+ * @example
+ * // Example usage of DaysInMonth component:
+ * <DaysInMonth
+ *   setClickedDate={handleDateClick}
+ *   clickedDate={selectedDate}
+ *   month={currentMonth}
+ *   year={currentYear}
+ *   todayBackground="#f39c12"
+ * />
+ */
 function DaysInMonth({ setClickedDate, clickedDate, month, year, todayBackground }) {
     let arrayDate = [];
     const thisMonthFirstDateIndex = new Date(year, month, 1).getDay();
