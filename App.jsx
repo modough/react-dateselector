@@ -2,7 +2,7 @@ import { useState } from 'react'
 import DayPicker from './src/components/DayPicker'
 import PropTypes from 'prop-types'
 
-function App({ locale = 'en-US', color = 'orange', todayBackground = 'orange' }) {
+function App({ locale = 'es-ES', color = 'orange', todayBackground = 'orange' }) {
   const [clickedDate, setClickedDate] = useState({})
   return (
     <DayPicker

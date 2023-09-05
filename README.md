@@ -29,6 +29,6 @@ The most basic use of the DatePicker can be described with:
 
 | Prop name       | Desciption                                                                                                      | default value |
 | --------------- | --------------------------------------------------------------------------------------------------------------- | ------------- |
-| locale          | `'Allow the user to change timezone'`                                                                           | `'en-us'`     |
+| locale          | `'Allow the user to change timezone available for en-US, fr-FR, es-ES, de-DE'`                                  | `'en-us'`     |
 | color           | `'Allow the user to change color on background and texts'`                                                      | `'red'`       |
 | todayBackground | `'Allow the user to change color on today's date background. 5 colors possible red, blue, orange, gray, green'` | `'red'`       |

@@ -13,6 +13,20 @@ export const monthsInLetter = {
         "Novembre",
         "Decembre"
     ],
+    es: [
+        'Enero',
+        'Febrero',
+        'Marzo',
+        'Abril',
+        'Mayo',
+        'Junio',
+        'Julio',
+        'Agosto',
+        'Septiembre',
+        'Octubre',
+        'Noviembre',
+        'Diciembre'
+    ],
     en: [
         "January",
         "February",
@@ -26,5 +40,20 @@ export const monthsInLetter = {
         "October",
         "November",
         "December"
+    ],
+    de: [
+        "Neujahr",
+        "Januar",
+        "Februar",
+        "M&auml;rz",
+        "April",
+        "Mai",
+        "Juni",
+        "Juli",
+        "August",
+        "September",
+        "Oktober",
+        "November",
+        "Dezember"
     ]
 }
