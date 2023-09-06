@@ -5,14 +5,13 @@
   border-radius: 10px;
 }
 .daypicker-wrapper .header {
-  height: 60px;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-direction: column;
   color: white;
   padding: 15px;
-
   border-radius: 10px 10px 0 0;
   box-shadow: 0px -7px 5px 0px rgba(0, 0, 0, 0.75) inset;
   -webkit-box-shadow: 0px -7px 5px 0px rgba(0, 0, 0, 0.75) inset;
@@ -20,29 +19,23 @@
 }
 .daypicker-wrapper .header .icons {
   position: relative;
-  width: 200px;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.header .icons img {
+.header .icons span {
   cursor: pointer;
   border-radius: 5px;
   padding: 5px;
-  width: 12px;
+  font-size: 15px;
+  font-weight: bolder;
 }
 
-.header .icons .leftArrow-month {
-  rotate: 180deg;
-}
-
-.header .icons .rightArrow-year {
-  rotate: 180deg;
-}
-
-.header .icons img:hover {
+.header .icons span:hover {
   background-color: rgb(201, 204, 204);
+  color: #000;
 }
 .daypicker-wrapper .header .today-date button {
   margin: 0;

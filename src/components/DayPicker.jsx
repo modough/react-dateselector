@@ -6,9 +6,7 @@ import DaysInMonth from './DaysInMonth';
 import { useState } from 'react';
 import { currentMonth, currentYear, date } from '../utils/dateFormat';
 import Weeks from './Weeks';
-import PropTypes from 'prop-types'
-import arrow from '../assets/arrow-34.svg';
-import doubleArrow from '../assets/left-double-arrow.svg';
+import PropTypes from 'prop-types';
 
 /**
  * DayPicker component for displaying and navigating through calendar days.
@@ -75,31 +73,16 @@ const DayPicker = ({ clickedDate, setClickedDate, locale, color, todayBackground
         <div className='daypicker-wrapper'>
             <div className='header' style={{ backgroundColor: color }}>
                 <div className='icons'>
-                    <img
-                        className='leftArrow-year' onClick={displayPrevYear}
-                        src={doubleArrow}
-                        alt='arrow for previous year'
-                    />
-                    <img
-                        className='leftArrow-month' onClick={displayPrevMonth}
-                        src={arrow}
-                        alt='arrow for previous month'
-                    />
+                    <span className='leftArrow-year' onClick={displayPrevYear}>{'<<'}</span>
+                    <span className='leftArrow-month' onClick={displayPrevMonth}>{'<'}</span>
+
                     <CurrentDate
                         locale={locale}
                         month={today ? currentMonth : month}
                         year={today ? currentYear : year}
                     />
-                    <img
-                        className='rightArrow-month' onClick={displayNextMonth}
-                        src={arrow}
-                        alt='arrow for next month'
-                    />
-                    <img
-                        className='rightArrow-year' onClick={displayNextYear}
-                        src={doubleArrow}
-                        alt='arrow for next month'
-                    />
+                    <span className='rightArrow-month' onClick={displayNextMonth}>{'>'}</span>
+                    <span className='rightArrow-year' onClick={displayNextYear}>{'>>'}</span>
                 </div>
                 <div className='today-date'
                     onClick={(e) => {
